@@ -3,4 +3,4 @@ Solutions to challenges from Alura courses. Each folder represents a course and 
 
 ## Preview
 
-![Desktop](github/1.png)
+![Desktop](public/preview-portfolio.png)
