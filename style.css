@@ -8,6 +8,10 @@ body {
   margin: 0;
 }
 
+header {
+  background: red;
+}
+
 .content {
   height: 100vh;
   width: 100%;
@@ -86,4 +90,6 @@ body {
   background-position: bottom;
   position: absolute;
   z-index: 2;
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,205 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --light: #ffffff;
+    --dark: #000000;
+}
+
+body {
+    font-family: "EudoxusSans-Medium", sans-serif;
+    background: rgba(10, 10, 10, 1);
+    // background: linear-gradient(
+    //     to bottom right,
+    //     rgba(10, 10, 10, 1),
+    //     rgba(12, 39, 63, 1)
+    //   )
+    //   no-repeat center center fixed !important;
+    background: black;
+    color: white;
+    margin: 0;
+}
+
+@font-face {
+    font-family: 'EudoxusSans-Regular';
+    src: url(../assets/fonts/EudoxusSans-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'EudoxusSans-Medium';
+    src: url(../assets/fonts/EudoxusSans-Medium.ttf);
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    padding: 25px 0px;
+    width: 100%;
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        width: 1200px;
+
+        @media (max-width: 1200px) {
+            width: 1100px;
+        }
+
+        &__switch {
+            display: grid;
+            place-content: center;
+
+            &__track {
+                display: flex;
+                align-items: center;
+                border: 1px solid white;
+
+                width: 4.6rem;
+                height: 2.5rem;
+                border-radius: 1.75rem;
+                padding: 0px 5px;
+
+                cursor: pointer;
+
+                user-select: none;
+
+                background-image: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url("./../assets/svg/moon-stars.svg");
+                background-size: cover;
+                background-position: center;
+
+                
+
+
+                &--toggle {
+                    -webkit-appearance: none !important;
+                    -moz-appearance: none !important;
+                    -ms-appearance: none !important;
+                    -o-appearance: none !important;
+                    appearance: none !important;
+
+                    cursor: pointer;
+
+                    content: url("./../assets/svg/moon-stars.svg");
+
+                    background: white;
+                    padding: 0.5rem;
+                    border-radius: 50%;
+
+                    transform: translateX(-0.0625rem);
+
+                    transition: transform 0.2s;
+
+                    &:checked {
+                        content: url("./../assets/svg/sun.svg");
+
+                        transform: translateX(calc(2rem - 0.0625rem));
+                    }
+                }
+            }
+        }
+    }
+}
+
+.content {
+    height: calc(100vh - 82px);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    &__wrapper {
+        display: flex;
+        width: 1200px;
+
+        @media (max-width: 1200px) {
+            width: 1100px;
+        }
+
+        &__left {
+            display: flex;
+            align-self: center;
+            flex-direction: column;
+
+            width: 50%;
+
+            &--title {
+                font-family: "EudoxusSans-Medium", sans-serif;
+                font-size: 42px;
+                line-height: 56px;
+                padding-bottom: 20px;
+
+                span {
+                    color: rgb(125, 143, 247);
+                }
+            }
+
+            &--description {
+
+                font-family: "EudoxusSans-Regular", sans-serif;
+                font-size: 21px;
+                line-height: 36px;
+                padding-bottom: 40px;
+
+                span {
+                    color: rgb(125, 143, 247);
+                }
+            }
+
+            &__social-links {
+                display: flex;
+                justify-content: center;
+                gap: 30px;
+
+
+                &--link {
+                    color: #ffffff;
+                    text-decoration: unset;
+
+                    ion-icon {
+                        font-size: 2rem;
+                    }
+
+                    &:hover {
+                        color: rgb(125, 143, 247);
+                    }
+                }
+            }
+        }
+
+        &__right {
+            padding-right: 15px;
+            display: flex;
+            align-self: center;
+            justify-content: end;
+            width: 50%;
+
+            &--border {
+                z-index: 0;
+                position: relative;
+                content: "";
+                left: 15px;
+                bottom: 15px;
+                display: flex;
+                border: 3px solid rgb(133, 163, 255);
+                border-radius: 16px;
+                width: 430px;
+                height: 520px;
+                ;
+            }
+
+            &--image {
+                background-image: url(../assets/profile.jpg);
+                background-size: cover;
+                width: 430px;
+                height: 520px;
+                border-radius: 16px;
+                background-position: bottom;
+                position: absolute;
+                z-index: 2;
+            }
+        }
+    }
+}
